@@ -2,13 +2,19 @@
  * This defines the "Machines" of the system.
  */
 
-public interface Machine {
-	public PowerType getPowerType();
-	public double getPowerUsage(double t);
-	public boolean insertBlock(Block b);
-	public Block getNextOutput();
-	public int getInputSize();
-	public int getOutputSize();
-	public double getWorkTime();
-	public boolean isWorking();
+public abstract class Machine extends Processor {
+
+    public Machine() {
+        super();
+    }
+
+    public abstract PowerType getPowerType();
+
+    public abstract double getPowerUsage();
+
+    public abstract double getWorkTime();
+
+    public abstract boolean isWorking();
+
+    public abstract Event proc(double time);
 }
