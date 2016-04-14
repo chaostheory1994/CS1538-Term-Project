@@ -18,7 +18,7 @@ public class Block {
 	 * Also affected by layer.
 	 */
 	public static double getClumpChance(BlockType bt, int layer){
-		return 0.5;// TODO: get Clump Chances for each block.
+		return 0.5; // TODO: get Clump Chances for each block.
 	}
 	
 	/*

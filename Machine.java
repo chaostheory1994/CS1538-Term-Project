@@ -4,7 +4,7 @@
 
 public interface Machine {
 	public PowerType getPowerType();
-	public double getPowerUsage(float t);
+	public double getPowerUsage(double t);
 	public boolean insertBlock(Block b);
 	public Block getNextOutput();
 	public int getInputSize();

@@ -2,6 +2,8 @@
  * This is the event class.
  * Will have the various event types
  * Also contain room for event data.
+ * The parameters are as follow for each Event Type
+ * 
  */
 import java.lang.Comparable;
 

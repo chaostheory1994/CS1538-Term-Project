@@ -3,12 +3,14 @@ import java.util.ArrayList;
 public class Path {
 	int id;
 	ArrayList<Machine> machines;
+	ArrayList<Block> output;
 	/*
 	 * Constructor
 	 */
 	public Path(int id){
 		this.id = id;
 		machines = new ArrayList<Machine>();
+		output = new ArrayList<Block>();
 	}
 	
 	/*
@@ -17,7 +19,7 @@ public class Path {
 	 */
 	public Event passEvent(Event e){
 		
-		return new Event(EventType.GEN_FINISHED, 1.2);
+		return new Event(EventType.MACH_FINISHED, e.t + machines.get((int)e.param2).getWorkTime());
 	}
 	
 	/*
@@ -54,18 +56,29 @@ public class Path {
 	 * It will check if any machine is running in its domain.
 	 */
 	public boolean isWorking(){
-		return true;
+		for(Machine m : machines){
+			if(m.isWorking()) return true;
+		}
+		return false;
 	}
 	
 	/*
 	 * This method will return the amount of power needed by all the machines.
 	 * It will only count machines that currently need power.
 	 */
-	public double getRFPower(){
-		return 0.0;
+	public double getRFPower(double t){
+		double totalPower = 0.0;
+		for(Machine m : machines){
+			if(m.isWorking() && m.getPowerType() == PowerType.RF) totalPower += m.getPowerUsage(t);
+		}
+		return totalPower;
 	}
 	
-	public double getEUPower(){
-		return 0.0;
+	public double getEUPower(double t){
+		double totalPower = 0.0;
+		for(Machine m : machines){
+			if(m.isWorking() && m.getPowerType() == PowerType.EU) totalPower += m.getPowerUsage(t);
+		}
+		return totalPower;
 	}
 }
