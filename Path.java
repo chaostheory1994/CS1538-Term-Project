@@ -107,7 +107,7 @@ public class Path {
      * Allows the main program to get the next item waiting to be outputed.
      */
     public Block getNextOutput() {
-        return output.get(0);
+        return output.remove(0);
     }
 
     /*

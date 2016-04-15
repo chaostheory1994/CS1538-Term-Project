@@ -9,15 +9,19 @@
  * @author jmsch
  */
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Processor {
 
     ArrayList<Block> input;
     ArrayList<Block> output;
+    Random rnd;
 
     public Processor() {
         input = new ArrayList<>();
         output = new ArrayList<>();
+        rnd = new Random();
+        
     }
 
     public void insertBlock(Block b) {
@@ -42,6 +46,10 @@ public class Processor {
 
     protected void insertOutput(Block b) {
         output.add(b);
+    }
+    
+    public boolean genBernoulli(double p){
+        return rnd.nextDouble() <= p;
     }
 
 }

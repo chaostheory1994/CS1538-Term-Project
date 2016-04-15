@@ -8,27 +8,24 @@
  *
  * @author jmsch
  */
-import java.util.ArrayList;
-
-public class AlloySmelter extends Machine {
-
-    public AlloySmelter() {
+public class ElectricFurnace extends Machine{
+    public ElectricFurnace(){
         super();
     }
 
     @Override
     public PowerType getPowerType() {
-        return PowerType.RF;
+        return PowerType.EU;
     }
 
     @Override
     public double getPowerUsage() {
-        return 400.0; // Alloy Smelter uses 400.0 energy / second
+        return 60.0; // 400 rf/s
     }
 
     @Override
     public double getWorkTime() {
-        return 5.0; // 5 seconds to run
+        return 6.5;
     }
 
     @Override
@@ -51,5 +48,4 @@ public class AlloySmelter extends Machine {
         }
         else return null;
     }
-
 }
