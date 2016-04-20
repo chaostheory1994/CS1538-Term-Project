@@ -47,7 +47,7 @@ public class Main {
         // Create and Start new simulation.
         // Creates a quarry of size 64x64.
         // The quarry will dig from lvl 50 to lvl 9.
-        new Main(64, 64, "C:\\Users\\jmsch\\Documents\\NetBeansProjects\\CS1538-Term-Project\\CS1538-Term-Project\\src\\paths.txt").start();
+        new Main(64, 64, "C:\\Users\\Jacob\\workspace\\cs1538-term\\src\\paths.txt").start();
     }
 
     /*

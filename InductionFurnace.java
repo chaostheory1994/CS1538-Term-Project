@@ -68,6 +68,7 @@ public class InductionFurnace extends Machine{
             // Now we must check if there is an input to fill secBlock.
             if(this.getInputSize() > 0){
                 secBlock = this.removeInput();
+                secBlock.state = BlockState.BAR;
                 return new Event(EventType.MACH_FINISHED, time + (this.getWorkTime() * secBlock.amount));
             }
             else{
