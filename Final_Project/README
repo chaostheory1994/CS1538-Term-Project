@@ -1,0 +1,29 @@
+MINECRAFT GROUP
+
+Members:
+	Dustin Chlystek
+	Peter McCloskey
+	Jacob Schreiner
+	Sam Morin
+	Frank Torchia
+	
+HOW TO RUN:
+	
+	In order to actually run the program, just run the main file and it will pop-up with an 
+	output screen that updates until it is finished. 
+	
+	In order to change the paths that the ore will take there is a paths.txt file that needs 
+	to be edited. There are 3 machine paths, 4 furnaces, and 3 generator types. These can be 
+	combined for the different paths the ores take. To change the path edit the paths.txt file 
+	to look like the following:
+	
+	pitsgm1f1
+	g1
+	
+	The first line is the machine paths and the furnaces. Edit the "m1" to be m1, m2, or m3 in 
+	order to change the machine path that the ore takes. Edit the "f1" to be f1, f2, f3, or f4
+	in order to change the furnace that the ore goes to. Edit the "g1" in the second line to be
+	g1, g2, or g3 for the different generator types. There will always be an "EU" generator 
+	available to run, so this just changes the "RF" generator type. The file 
+	MinecraftDataSheet.xlsx contains the different machine paths, furnaces, and generator types 
+	all in different pages of the file. Refer to that file in order to see what the path is. 
